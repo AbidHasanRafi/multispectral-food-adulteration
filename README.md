@@ -29,7 +29,7 @@ This repository contains:
 │   │   └── multispectcode.py                           live display + CSV logger (Python, matplotlib, pyserial)
 │   └── dataset/
 │       └── build_dataset.py                            raw logger CSVs -> structured dataset
-└── dataset/                                            SAMPLE of the dataset (described below)
+└── sample dataset/                                     SAMPLE of the dataset (described below)
     ├── raw_renamed/                                    11 logger files with systematic names (original 32-column format)
     ├── processed/
     │   ├── spectral_frames_sample.csv                  all frames of the same 11 samples, labelled, with QC flags (789 rows x 54 columns)
