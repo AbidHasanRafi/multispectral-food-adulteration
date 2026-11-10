@@ -1,0 +1,55 @@
+column,group,description,unit,dtype
+frame_id,id,Running frame number across the whole table (1-based),,int
+sample_id,id,{matrix}_{adulterant}_{pct:02d}pct; one sample = one logger file,,str
+series,id,Adulteration series ({matrix}_{adulterant}) or {matrix}_pure for pure references,,str
+matrix,label,"Food matrix: chili, milk, coconut-oil, mustard-oil, maida",,str
+adulterant,label,"Adulterant (INFERRED from original file names; confirm): yellow-colourant, batter, besan, palm-oil, chalk; 'none' for pure",,str
+pct_adulterant,label,"Adulterant level, 0 for pure (unit presumed % w/w; not documented at collection)",%,int
+is_pure,label,True for the pure reference samples,,bool
+session_id,meta,"Recording day: S1 = 2026-03-13, S2 = 2026-03-15",,str
+session_date,meta,Calendar date from the logger timestamp,,date
+pure_reference,meta,sample_id of the pure reference for this series,,str
+pure_reference_same_day,meta,False when the pure reference was recorded on a different day (milk_besan),,bool
+source_file,meta,Original logger file name in data+code/,,str
+frame_idx,meta,0-based frame index within the file,,int
+timestamp,meta,"PC clock at logging, ISO 8601, no timezone",,str
+t_elapsed_s,meta,Seconds since the first frame of the file,s,float
+dt_s,meta,Seconds since previous frame (NaN for the first frame),s,float
+as7265x_410nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_435nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_460nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_485nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_510nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_535nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_560nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_585nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_610nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_645nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_680nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_705nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_730nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_760nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_810nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_860nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_900nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7265x_940nm,signal,"AS7265x (3-chip triad), 410-940 nm, logged values are whole numbers",counts,int
+as7341_415nm,signal,"AS7341, 16-bit counts, ceiling 65535",counts,int
+as7341_445nm,signal,"AS7341, 16-bit counts, ceiling 65535",counts,int
+as7341_480nm,signal,"AS7341, 16-bit counts, ceiling 65535",counts,int
+as7341_515nm,signal,"AS7341, 16-bit counts, ceiling 65535",counts,int
+as7341_555nm,signal,"AS7341, 16-bit counts, ceiling 65535",counts,int
+as7341_590nm,signal,"AS7341, 16-bit counts, ceiling 65535",counts,int
+as7341_630nm,signal,"AS7341, 16-bit counts, ceiling 65535",counts,int
+as7341_680nm,signal,"AS7341, 16-bit counts, ceiling 65535; original header 'AS7341_680nm*' (asterisk unexplained in the source)",counts,int
+as7341_clear,signal,"AS7341, 16-bit counts, ceiling 65535; broadband channel, mostly saturated",counts,int
+as7341_nir,signal,"AS7341, 16-bit counts, ceiling 65535; broadband channel, mostly saturated",counts,int
+ldr_1,signal,"LDR module read on the Arduino ADC (0-1023); 3-pin LM393 module (DO output), values barely vary; see README",ADC,int
+ldr_2,signal,"LDR module read on the Arduino ADC (0-1023); 3-pin LM393 module (DO output), values barely vary; see README",ADC,int
+ldr_3,signal,"LDR module read on the Arduino ADC (0-1023); 3-pin LM393 module (DO output), values barely vary; see README",ADC,int
+qc_as7265x_485nm_dead,qc,AS7265x 485 nm channel reads 0 (dead/failed read; ~81 % of frames),,bool
+qc_as7341_clear_sat,qc,AS7341 Clear channel at 65535,,bool
+qc_as7341_nir_sat,qc,AS7341 NIR channel at 65535,,bool
+qc_as7341_630nm_sat,qc,AS7341 630 nm channel at 65535,,bool
+qc_as7341_680nm_sat,qc,AS7341 680 nm channel at 65535,,bool
+qc_as7341_n_sat,qc,Number of saturated AS7341 channels in the frame,,int
+qc_time_gap,qc,Frame arrived > 4 s after the previous frame,,bool

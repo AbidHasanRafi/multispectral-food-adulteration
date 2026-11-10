@@ -1,0 +1,5 @@
+# Python packages for the logger and the dataset builder (versions the scripts were last run with)
+numpy>=2.4
+pandas>=2.3
+matplotlib>=3.11
+pyserial>=3.5          # needed by logger/multispectcode.py. Do NOT install the unrelated package called "serial"

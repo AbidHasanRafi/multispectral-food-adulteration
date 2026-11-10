@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+spectral_log.csv
+dataset_rebuilt/
+data+code/
